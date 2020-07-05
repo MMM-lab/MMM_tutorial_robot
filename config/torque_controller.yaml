@@ -1,13 +1,13 @@
-rrbot:
+mmm_robot:
   # Publish all joint states -----------------------------------
   joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50  
   
   # Position Controllers ---------------------------------------
-  joint1_torque:
+  left_wheel_joint:
     type: effort_controllers/JointEffortController
     joint: left_wheel_joint
-  joint2_torque:
+  right_wheel_joint:
     type: effort_controllers/JointEffortController
     joint: right_wheel_joint

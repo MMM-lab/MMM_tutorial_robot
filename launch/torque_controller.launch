@@ -13,7 +13,16 @@
 
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model mmm_robot" />
 
-  <rosparam command="load" file="$(find mmm_robot)/config/torque_controller.yaml" ns="/mmm_robot" />
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/mmm_robot" 
-      args="torque_controller" />
+  <rosparam command="load" file="$(find mmm_robot)/config/torque_controller.yaml" />
+    <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/mmm_robot" args="joint_state_controller
+					  left_wheel_joint
+					  right_wheel_joint"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+	respawn="false" output="screen">
+    <remap from="/joint_states" to="/mmm_robot/joint_states" />
+  </node>
 </launch>
