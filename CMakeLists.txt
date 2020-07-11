@@ -14,6 +14,11 @@ generate_messages(DEPENDENCIES std_msgs)
 
 catkin_package()
 
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+)
+
 install(DIRECTORY config
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
@@ -22,5 +27,5 @@ install(DIRECTORY launch
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(mmm_robot_interface src/mmm_robot_interface.cpp)
+add_executable(mmm_robot_interface src/mmm_robot_interface.cpp src/torque_calculater.cpp)
 target_link_libraries(mmm_robot_interface ${catkin_LIBRARIES})
