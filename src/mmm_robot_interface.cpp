@@ -40,7 +40,6 @@ int main(int argc, char **argv)
     target_robot_state.yow_rate = std::stof(argv[1]);
     target_robot_state.velocity = std::stof(argv[2]);
 
-
     torque_control.get_torques(&robot_input, &robot_wheel_rate, &target_robot_state);
 
     std_msgs::Float64 joint1_torque;
@@ -60,7 +59,6 @@ int main(int argc, char **argv)
     loop_rate.sleep();
     ++count;
   }
-
 
   return 0;
 }
