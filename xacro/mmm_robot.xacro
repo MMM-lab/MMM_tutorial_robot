@@ -117,4 +117,12 @@
     <mu1 value="0.5" />
     <mu2 value="0.5" />
   </gazebo>
+  <gazebo>
+    <plugin name="ground_truth" filename="libgazebo_ros_p3d.so">
+      <frameName>world</frameName>
+      <bodyName>base_link</bodyName>
+      <topicName>/base_link_pos</topicName>
+      <updateRate>10.0</updateRate>
+    </plugin>
+  </gazebo>
 </robot>
