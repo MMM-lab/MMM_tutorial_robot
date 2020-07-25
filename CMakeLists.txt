@@ -27,5 +27,5 @@ install(DIRECTORY launch
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(mmm_robot_interface src/mmm_robot_interface.cpp src/torque_calculater.cpp)
+add_executable(mmm_robot_interface src/mmm_robot_interface.cpp src/PIDController.cpp src/AngleController.cpp)
 target_link_libraries(mmm_robot_interface ${catkin_LIBRARIES})
