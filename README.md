@@ -12,4 +12,4 @@ run rqt_plot
 ```bash
 rosrun rqt_plot rqt_plot
 ```
-![rqt_plot](https://github.com/MMM-lab/mmm_robot/tree/Extended_Kalman_Filter/figure)
+![rqt_plot](https://github.com/MMM-lab/mmm_robot/blob/Extended_Kalman_Filter/figure/rqt_plot.png)
